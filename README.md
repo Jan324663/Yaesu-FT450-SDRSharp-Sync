@@ -1,11 +1,12 @@
 SDRSharp.YaesuFT450Sync
 
-SDR# Studio Plugin for 2-Way CAT synchronization with Yaesu FT-450 /
-FT-450D.
+SDR# Plugin for 2-Way CAT synchronization with Yaesu FT-450D.
 
 This plugin enables real-time frequency, mode, and bandwidth
 synchronization between SDR# Studio and a Yaesu FT-450 / FT-450D
 transceiver via CAT (Serial).
+
+In addition, the transmitter output power can be controlled directly from the SDR# plugin interface.
 
 ------------------------------------------------------------------------
 
@@ -86,29 +87,10 @@ Settings file: YaesuFT450Control.settings.json
 
 Example:
 
-{ “ComPort”: “COM5”, “BaudRate”: 38400 }
+{ “ComPort”: “COM3”, “BaudRate”: 9600 }
 
 Make sure the baud rate matches the CAT configuration in the FT-450.
 
-------------------------------------------------------------------------
-
-CAT Commands Used
-
-Frequency set: FA########; Mode set: MDxx; DSP IF Width: SH0xx;
-
-FT-450 expects frequency as 8-digit Hz format. Example: FA14250000;
-
-------------------------------------------------------------------------
-
-Stability Features
-
--   Debounce timer (default 100 ms)
--   TRX echo suppression window (default 300 ms)
--   Optional frequency quantization
--   Safe UI thread marshaling
--   Clean disposal of events and timers
-
-------------------------------------------------------------------------
 
 License: MIT
 
